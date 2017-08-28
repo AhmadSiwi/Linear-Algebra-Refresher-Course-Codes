@@ -13,12 +13,12 @@ class Line(object):
         self.dimension = 2
 
         if not normal_vector:
-            all_zeros = ['0']*self.dimension
+            all_zeros = [0]*self.dimension
             normal_vector = Vector(all_zeros)
         self.normal_vector = normal_vector
 
         if not constant_term:
-            constant_term = Decimal('0')
+            constant_term = Decimal(0)
         self.constant_term = Decimal(constant_term)
 
         self.set_basepoint()
@@ -28,7 +28,7 @@ class Line(object):
         try:
             n = self.normal_vector
             c = self.constant_term
-            basepoint_coords = ['0']*self.dimension
+            basepoint_coords = [0]*self.dimension
 
             initial_index = Line.first_nonzero_index(n.coordinates)
             initial_coefficient = n.coordinates[initial_index]
@@ -137,7 +137,7 @@ class MyDecimal(Decimal):
         return abs(self) < eps
 
 
-
+'''
 l1 = Line(Vector([4.046,2.836]),1.21)
 l2 = Line(Vector([10.115,7.09]),3.025)
 l3 = Line(Vector([7.204,3.182]),8.68)
@@ -148,3 +148,5 @@ l6 = Line(Vector([1.773,8.343]),9.525)
 l1.intersection(l2)
 l3.intersection(l4)
 l5.intersection(l6)
+
+'''
